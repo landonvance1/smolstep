@@ -7,11 +7,13 @@ import { AppTopBarComponent } from './app-top-bar/app-top-bar.component';
 
 import { FontAwesomeModule, FaIconLibrary  } from '@fortawesome/angular-fontawesome';
 import { faSpinner, faBars } from '@fortawesome/free-solid-svg-icons';
+import { LandingContentComponent } from './landing-content/landing-content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppTopBarComponent
+    AppTopBarComponent,
+    LandingContentComponent
   ],
   imports: [
     BrowserModule,
