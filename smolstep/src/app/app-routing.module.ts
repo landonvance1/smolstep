@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DoTaskPageComponent } from './do-task-page/do-task-page.component';
+import { LandingContentComponent } from './landing-content/landing-content.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'doTask', component: DoTaskPageComponent },
+  { path: '', component: LandingContentComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
