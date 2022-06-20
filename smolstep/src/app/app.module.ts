@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { AppTopBarComponent } from './app-top-bar/app-top-bar.component';
 
 import { FontAwesomeModule, FaIconLibrary  } from '@fortawesome/angular-fontawesome';
-import { faSpinner, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { LandingContentComponent } from './landing-content/landing-content.component';
 
 @NgModule({
@@ -25,6 +25,6 @@ import { LandingContentComponent } from './landing-content/landing-content.compo
 })
 export class AppModule { 
   constructor(library: FaIconLibrary) {
-    library.addIcons(faSpinner, faBars);
+    library.addIcons(faBars);
   }
 }
