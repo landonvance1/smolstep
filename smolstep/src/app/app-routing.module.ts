@@ -4,7 +4,7 @@ import { DoTaskPageComponent } from './do-task-page/do-task-page.component';
 import { LandingContentComponent } from './landing-content/landing-content.component';
 
 const routes: Routes = [
-  { path: 'doTask', component: DoTaskPageComponent },
+  { path: 'doTask/:id', component: DoTaskPageComponent },
   { path: '', component: LandingContentComponent }
 ];
 
