@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-do-task-page',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoTaskPageComponent implements OnInit {
 
-  constructor() { }
+  taskId: number;
+
+  constructor(private route: ActivatedRoute, private router: Router) { 
+    this.taskId = 0;
+  }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.taskId = Number(params.get('id'));
+    });
   }
 
 }
