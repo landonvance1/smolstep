@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { mockTasks } from '../mock-tasks';
 
 @Component({
   selector: 'app-landing-content',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingContentComponent implements OnInit {
 
-  constructor() { }
+  taskId: number;
+
+  constructor() { 
+    this.taskId = 0;
+  }
 
   ngOnInit(): void {
+    let max: number = mockTasks.length;
+    this.taskId = Math.floor(Math.random() * max + 1);
   }
 
 }

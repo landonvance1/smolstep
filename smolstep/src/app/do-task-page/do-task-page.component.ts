@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Task } from '../task';
+import { TaskService } from '../task.service';
 
 @Component({
   selector: 'app-do-task-page',
@@ -8,16 +10,16 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class DoTaskPageComponent implements OnInit {
 
-  taskId: number;
+  task: Task | null;
 
-  constructor(private route: ActivatedRoute, private router: Router) { 
-    this.taskId = 0;
+  constructor(private route: ActivatedRoute, private router: Router, private taskService: TaskService) { 
+    this.task = null;
   }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
-      this.taskId = Number(params.get('id'));
+      let taskId: number = Number(params.get('id'));
+      this.task = this.taskService.getTask(taskId);
     });
   }
-
 }

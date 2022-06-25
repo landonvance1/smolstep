@@ -1,1 +1,8 @@
-<p>Task ID = {{ taskId }}</p>
+<ng-container *ngIf="task">
+    <div>Id = {{ task.id }}</div>
+    <div>Name = {{ task.name }}</div>
+    <div>Description = {{ task.description }}</div>
+    <div>Difficulty = {{ task.difficulty }}</div>
+    <div>Length = {{ task.length }}</div>
+</ng-container>
+
