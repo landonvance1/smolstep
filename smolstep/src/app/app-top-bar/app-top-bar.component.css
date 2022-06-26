@@ -1,9 +1,8 @@
-.header {
-    overflow: hidden;
-    padding: 20px 10px;
-    font-size: 5vh;
-}
+.example-spacer {
+    flex: 1 1 auto;
+  }
 
-.menu {
-    float: right;
-}
+  .top-bar {
+    font-size: 5vh;
+    height: 15vh;
+  }
