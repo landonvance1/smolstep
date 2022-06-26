@@ -1,6 +1,7 @@
 <div class="main">
-    <div>
-        <button type="button" class="btn doTaskButton" [routerLink]="['/doTask', taskId]" routerLinkActive="active">Do a Task</button>
-        <button type="button" class="btn addTaskButton">Add a Task</button>
-    </div>
 </div>
+<mat-toolbar class="button-row">
+    <button mat-flat-button class="action-button">Add a Task</button>
+    <button mat-raised-button color="accent" [routerLink]="['/doTask', taskId]" routerLinkActive="active"
+        class="action-button">Do a Task</button>
+</mat-toolbar>
