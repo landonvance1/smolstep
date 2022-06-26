@@ -1,20 +1,6 @@
-@import "~bootstrap/dist/css/bootstrap.css";
-
 body {
     margin: 0px;
     font-family: 'Lucida Sans';
     overflow: hidden;
     height: 100vh;
-}
-
-.secondaryBackgroundColor {
-    background-color: #8BD9C7;
-}
-
-.secondaryActionColor {
-    background-color: #0076BE;
-}
-
-.primaryActionColor {
-    background-color: #95D8EB;
 }

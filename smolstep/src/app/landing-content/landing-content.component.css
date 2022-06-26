@@ -1,5 +1,4 @@
 .addTaskButton {
-    background-color: #0076BE;
     margin: 20px;
     margin-bottom: 40px;
     font-size: 16px;
@@ -7,7 +6,6 @@
 }
 
 .doTaskButton {
-    background-color: #95D8EB;
     margin: 20px;
     margin-bottom: 40px;
     font-size: 16px;
@@ -24,10 +22,4 @@ img {
     background-position: center;
     background-size: 100% 100%;
     height: 100%;
-}
-
-.main .row {
-    position: absolute;
-    bottom: 0%;
-    width: 100%;
 }
