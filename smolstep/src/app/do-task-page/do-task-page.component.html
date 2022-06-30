@@ -1,8 +1,19 @@
 <ng-container *ngIf="task">
-    <div>Id = {{ task.id }}</div>
-    <div>Name = {{ task.name }}</div>
-    <div>Description = {{ task.description }}</div>
-    <div>Difficulty = {{ task.difficulty }}</div>
-    <div>Length = {{ task.length }}</div>
-</ng-container>
+    <mat-card class="task-card">
+        <mat-card-title-group>
+            <mat-card-title>{{task.name}}</mat-card-title>
+            <mat-card-subtitle>{{ task.description }}</mat-card-subtitle>
+        </mat-card-title-group>
 
+        <div class="task-details">
+            <div class="task-detail-item">
+                <fa-icon [icon]="getTaskDifficultyIcon()" class="task-detail-icon"></fa-icon>
+                <span class="task-detail-text">{{ getTaskDifficultyText() }}</span>
+            </div>
+            <div class="task-detail-item">
+                <fa-icon [icon]="getTaskDurationIcon()" class="task-detail-icon"></fa-icon>
+                <span class="task-detail-text">{{ getTaskDurationText() }}</span>
+            </div>
+        </div>
+    </mat-card>
+</ng-container>
