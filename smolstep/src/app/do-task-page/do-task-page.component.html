@@ -1,19 +1,26 @@
 <ng-container *ngIf="task">
-    <mat-card class="task-card">
-        <mat-card-title-group>
-            <mat-card-title>{{task.name}}</mat-card-title>
-            <mat-card-subtitle>{{ task.description }}</mat-card-subtitle>
-        </mat-card-title-group>
+    <div class="turtle">
+        <mat-card class="task-card">
+            <mat-card-title-group>
+                <mat-card-title>{{ task.name }}</mat-card-title>
+                <mat-card-subtitle>{{ task.description }}</mat-card-subtitle>
+            </mat-card-title-group>
 
-        <div class="task-details">
-            <div class="task-detail-item">
-                <fa-icon [icon]="getTaskDifficultyIcon()" class="task-detail-icon"></fa-icon>
-                <span class="task-detail-text">{{ getTaskDifficultyText() }}</span>
+            <div class="task-details">
+                <div class="task-detail-item">
+                    <fa-icon [icon]="getTaskDifficultyIcon()" class="task-detail-icon"></fa-icon>
+                    <span class="task-detail-text">{{ getTaskDifficultyText() }}</span>
+                </div>
+                <div class="task-detail-item">
+                    <fa-icon [icon]="getTaskDurationIcon()" class="task-detail-icon"></fa-icon>
+                    <span class="task-detail-text">{{ getTaskDurationText() }}</span>
+                </div>
             </div>
-            <div class="task-detail-item">
-                <fa-icon [icon]="getTaskDurationIcon()" class="task-detail-icon"></fa-icon>
-                <span class="task-detail-text">{{ getTaskDurationText() }}</span>
-            </div>
-        </div>
-    </mat-card>
+        </mat-card>
+    </div>
+
+    <mat-toolbar class="button-row">
+        <button mat-flat-button class="action-button task-page-button" (click)="notNowClicked()">Not Now</button>
+        <button mat-raised-button color="accent" class="action-button task-page-button">Start Task</button>
+    </mat-toolbar>
 </ng-container>

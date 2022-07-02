@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { IconProp, text } from '@fortawesome/fontawesome-svg-core';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { Task } from '../task';
 import { TaskService } from '../task.service';
-import { Length, Difficulty } from '../constants';
+import { Length, Difficulty, DeclineReason } from '../constants';
+import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { DeclineTaskSheetComponent } from './decline-task-sheet/decline-task-sheet.component';
 
 @Component({
   selector: 'app-do-task-page',
@@ -14,8 +16,34 @@ export class DoTaskPageComponent implements OnInit {
 
   task: Task | null;
 
-  constructor(private route: ActivatedRoute, private router: Router, private taskService: TaskService) {
+  constructor(private route: ActivatedRoute, private router: Router, private taskService: TaskService, private _declineBottomSheet: MatBottomSheet) {
     this.task = null;
+  }
+
+  notNowClicked() {
+    let sheetRef: MatBottomSheetRef;
+    sheetRef = this._declineBottomSheet.open(DeclineTaskSheetComponent, {
+      data: {
+        callback: (reason: DeclineReason) => {
+          sheetRef.dismiss();
+          this.declineTask(reason);
+        }
+      },
+    });
+
+    sheetRef.afterDismissed().subscribe(() => {
+      if (document.activeElement instanceof HTMLElement) {
+        document.activeElement.blur();
+      }
+    });
+  }
+
+  declineTask(reason: DeclineReason) {
+    if (this.task) {
+      this.taskService.declineTask(this.task?.id, reason);
+    }
+
+    this.router.navigate(['doTask/' + this.taskService.getNextTaskId()]);
   }
 
   getTaskDurationText() {
@@ -56,7 +84,7 @@ export class DoTaskPageComponent implements OnInit {
 
     return text;
   }
-  
+
   getTaskDifficultyIcon() {
     let icon: IconProp;
     if (this.task?.difficulty === Difficulty.easy) {

@@ -1,5 +1,5 @@
-.task-card {
-    margin: 15px;
+.task-card-container {
+    padding: 15px;
 }
 
 .task-details {
@@ -21,4 +21,8 @@
 
 .task-detail-text {
     font-size:20px;
+}
+
+.task-page-button {
+    margin: auto;
 }

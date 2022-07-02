@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { mockTasks } from '../mock-tasks';
+import { TaskService } from '../task.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing-content',
@@ -8,15 +9,17 @@ import { mockTasks } from '../mock-tasks';
 })
 export class LandingContentComponent implements OnInit {
 
-  taskId: number;
 
-  constructor() { 
-    this.taskId = 0;
+  constructor(private router: Router, private taskService: TaskService) {
+
+  }
+
+  doTaskClicked() {
+    this.router.navigate(['doTask/' + this.taskService.getNextTaskId()]);
   }
 
   ngOnInit(): void {
-    let max: number = mockTasks.length;
-    this.taskId = Math.floor(Math.random() * max + 1);
+   
   }
 
 }
