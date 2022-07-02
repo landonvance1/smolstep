@@ -4,8 +4,14 @@ export enum Difficulty {
     "hard"
 }
 
-export class Length {
-    static seconds: string = "S";
-    static minutes: string = "M";
-    static hours: string = "H";
+export enum Length {
+    "seconds",
+    "minutes",
+    "hours"
+}
+
+export enum DeclineReason {
+    "None",
+    "TooHard",
+    "TooLong",
 }
