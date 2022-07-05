@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TaskService } from '../task.service';
+import { TaskService } from '../services/task.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,7 +15,14 @@ export class LandingContentComponent implements OnInit {
   }
 
   doTaskClicked() {
-    this.router.navigate(['doTask/' + this.taskService.getNextTaskId()]);
+
+    let taskId: number = this.taskService.getNextTaskId();
+
+    if (taskId > 0) {
+      this.router.navigate(['doTask/' + taskId]);
+    } else {
+      alert('no tasks left, go take a walk');
+    }
   }
 
   ngOnInit(): void {

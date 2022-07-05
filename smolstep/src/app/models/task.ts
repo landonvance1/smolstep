@@ -1,4 +1,4 @@
-import { Difficulty, Length } from "./constants";
+import { Difficulty, Length } from "../constants";
 
 export interface Task {
     description: string;

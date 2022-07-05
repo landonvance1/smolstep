@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { Task } from '../task';
-import { TaskService } from '../task.service';
+import { Task } from '../models/task';
+import { TaskService } from '../services/task.service';
 import { Length, Difficulty, DeclineReason } from '../constants';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { DeclineTaskSheetComponent } from './decline-task-sheet/decline-task-sheet.component';
@@ -40,10 +40,16 @@ export class DoTaskPageComponent implements OnInit {
 
   declineTask(reason: DeclineReason) {
     if (this.task) {
-      this.taskService.declineTask(this.task?.id, reason);
+      this.taskService.declineTask(this.task, reason);
     }
 
-    this.router.navigate(['doTask/' + this.taskService.getNextTaskId()]);
+    let nextTaskId: number = this.taskService.getNextTaskId();
+
+    if (nextTaskId > 0) {
+      this.router.navigate(['doTask/' + nextTaskId]);
+    } else {
+      alert('no tasks left, go take a walk');
+    }
   }
 
   getTaskDurationText() {
