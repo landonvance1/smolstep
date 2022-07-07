@@ -48,7 +48,7 @@ export class DoTaskPageComponent implements OnInit {
     if (nextTaskId > 0) {
       this.router.navigate(['doTask/' + nextTaskId]);
     } else {
-      alert('no tasks left, go take a walk');
+      this.router.navigate(['allDone']);
     }
   }
 
