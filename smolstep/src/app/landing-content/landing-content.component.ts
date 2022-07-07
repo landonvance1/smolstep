@@ -21,7 +21,7 @@ export class LandingContentComponent implements OnInit {
     if (taskId > 0) {
       this.router.navigate(['doTask/' + taskId]);
     } else {
-      alert('no tasks left, go take a walk');
+      this.router.navigate(['allDone']);
     }
   }
 

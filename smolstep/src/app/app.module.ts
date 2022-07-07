@@ -17,6 +17,7 @@ import { LandingContentComponent } from './landing-content/landing-content.compo
 import { DoTaskPageComponent } from './do-task-page/do-task-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DeclineTaskSheetComponent } from './do-task-page/decline-task-sheet/decline-task-sheet.component';
+import { AllDonePageComponent } from './all-done-page/all-done-page.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DeclineTaskSheetComponent } from './do-task-page/decline-task-sheet/dec
     AppTopBarComponent,
     LandingContentComponent,
     DoTaskPageComponent,
-    DeclineTaskSheetComponent
+    DeclineTaskSheetComponent,
+    AllDonePageComponent
   ],
   imports: [
     BrowserModule,
