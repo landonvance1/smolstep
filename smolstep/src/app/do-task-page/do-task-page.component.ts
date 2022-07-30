@@ -6,6 +6,7 @@ import { TaskService } from '../services/task.service';
 import { Length, Difficulty, DeclineReason } from '../constants';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { DeclineTaskSheetComponent } from './decline-task-sheet/decline-task-sheet.component';
+import { BottomBarButtonArgs } from '../models/bottom-bar-button-args';
 
 @Component({
   selector: 'app-do-task-page',
@@ -14,10 +15,21 @@ import { DeclineTaskSheetComponent } from './decline-task-sheet/decline-task-she
 })
 export class DoTaskPageComponent implements OnInit {
 
+  startTaskButton: BottomBarButtonArgs;
+  notNowButton: BottomBarButtonArgs;
   task: Task | null;
 
   constructor(private route: ActivatedRoute, private router: Router, private taskService: TaskService, private _declineBottomSheet: MatBottomSheet) {
     this.task = null;
+    this.startTaskButton = {
+      buttonText: "Start Task",
+      buttonAction: () => alert('task started')
+    }
+    
+    this.notNowButton = {
+      buttonText: "Not Now",
+      buttonAction: () => this.notNowClicked()
+    }
   }
 
   notNowClicked() {

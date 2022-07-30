@@ -1,0 +1,4 @@
+<mat-toolbar class="button-row">
+  <button *ngIf="secondaryButtonArgs" mat-flat-button class="action-button" (click)="secondaryButtonArgs?.buttonAction()">{{ secondaryButtonArgs?.buttonText }}</button>
+  <button *ngIf="primaryButtonArgs" mat-raised-button color="accent" class="action-button" (click)="primaryButtonArgs?.buttonAction()">{{ primaryButtonArgs?.buttonText }}</button>
+</mat-toolbar>

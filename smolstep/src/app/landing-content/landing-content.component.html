@@ -1,6 +1,3 @@
 <div class="turtle">
 </div>
-<mat-toolbar class="button-row">
-    <button mat-flat-button class="action-button landing-page-button" routerLink="/addTask" routerLinkActive="active">Add a Task</button>
-    <button mat-raised-button color="accent" class="action-button landing-page-button" (click)="doTaskClicked()">Do a Task</button>
-</mat-toolbar>
+<app-bottom-bar [primary]="doTaskButton" [secondary]="addTaskButton"></app-bottom-bar>

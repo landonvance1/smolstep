@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DeclineTaskSheetComponent } from './do-task-page/decline-task-sheet/decline-task-sheet.component';
 import { AllDonePageComponent } from './all-done-page/all-done-page.component';
 import { AddTaskPageComponent } from './add-task-page/add-task-page.component';
+import { AppBottomBarComponent } from './app-bottom-bar/app-bottom-bar.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AddTaskPageComponent } from './add-task-page/add-task-page.component';
     DoTaskPageComponent,
     DeclineTaskSheetComponent,
     AllDonePageComponent,
-    AddTaskPageComponent
+    AddTaskPageComponent,
+    AppBottomBarComponent
   ],
   imports: [
     BrowserModule,

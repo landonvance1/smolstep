@@ -28,6 +28,4 @@
     </div>
   </mat-card>
 </div>
-<mat-toolbar class="button-row">
-  <button mat-raised-button color="accent" class="action-button add-task-page-button" (click)="addTask()">Add Task</button>
-</mat-toolbar>
+<app-bottom-bar [primary]="addTaskButton"></app-bottom-bar>
