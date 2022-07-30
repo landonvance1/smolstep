@@ -4,6 +4,7 @@ import { Difficulty, Length } from '../constants';
 import { AddTaskArgs } from '../models/add-task-args';
 import { TaskService } from '../services/task.service';
 import { Router } from '@angular/router';
+import { BottomBarButtonArgs } from '../models/bottom-bar-button-args';
 
 @Component({
   selector: 'app-add-task-page',
@@ -12,6 +13,8 @@ import { Router } from '@angular/router';
 })
 export class AddTaskPageComponent implements OnInit {
 
+  
+  addTaskButton: BottomBarButtonArgs;
   taskName: FormControl<string | null>;
   taskDescription: FormControl<string | null>;
   taskDifficulty: FormControl<Difficulty | null>;
@@ -22,6 +25,11 @@ export class AddTaskPageComponent implements OnInit {
     this.taskDescription = new FormControl(null);
     this.taskDifficulty = new FormControl(null);
     this.taskLength = new FormControl(null);
+
+    this.addTaskButton = {
+      buttonText: "Add Task",
+      buttonAction: () => this.addTask()
+    }
   }
 
   ngOnInit(): void {

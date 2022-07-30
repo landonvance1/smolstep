@@ -19,8 +19,5 @@
         </mat-card>
     </div>
 
-    <mat-toolbar class="button-row">
-        <button mat-flat-button class="action-button task-page-button" (click)="notNowClicked()">Not Now</button>
-        <button mat-raised-button color="accent" class="action-button task-page-button">Start Task</button>
-    </mat-toolbar>
+    <app-bottom-bar [primary]="startTaskButton" [secondary]="notNowButton"></app-bottom-bar>
 </ng-container>

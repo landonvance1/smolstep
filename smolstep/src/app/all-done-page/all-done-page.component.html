@@ -7,6 +7,4 @@
   </mat-card>
 </div>
 
-<mat-toolbar class="button-row">
-  <button mat-flat-button class="action-button all-done-button" routerLink="/addTask" routerLinkActive="active">Add a Task</button>
-</mat-toolbar>
+<app-bottom-bar [secondary]="addTaskButton"></app-bottom-bar>
