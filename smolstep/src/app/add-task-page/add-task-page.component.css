@@ -1,0 +1,14 @@
+.add-task-page-button {
+  margin: auto;
+}
+
+.add-task-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+mat-form-field.task-text-property {
+  width: 100%;
+}

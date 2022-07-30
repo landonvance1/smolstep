@@ -9,6 +9,9 @@ import { MatButtonModule  } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card'
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet'
 import { MatListModule } from '@angular/material/list'
+import { MatInputModule } from '@angular/material/input'
+import { MatSelectModule } from '@angular/material/select'
+import { ReactiveFormsModule } from '@angular/forms'
 
 import { FontAwesomeModule, FaIconLibrary  } from '@fortawesome/angular-fontawesome';
 import { faBars, faTemperatureEmpty, faTemperatureHalf, faTemperatureFull, faStopwatch, faClock, faHourglass } from '@fortawesome/free-solid-svg-icons';
@@ -18,6 +21,7 @@ import { DoTaskPageComponent } from './do-task-page/do-task-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DeclineTaskSheetComponent } from './do-task-page/decline-task-sheet/decline-task-sheet.component';
 import { AllDonePageComponent } from './all-done-page/all-done-page.component';
+import { AddTaskPageComponent } from './add-task-page/add-task-page.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,8 @@ import { AllDonePageComponent } from './all-done-page/all-done-page.component';
     LandingContentComponent,
     DoTaskPageComponent,
     DeclineTaskSheetComponent,
-    AllDonePageComponent
+    AllDonePageComponent,
+    AddTaskPageComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,10 @@ import { AllDonePageComponent } from './all-done-page/all-done-page.component';
     MatButtonModule,
     MatCardModule,
     MatBottomSheetModule,
-    MatListModule
+    MatListModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
