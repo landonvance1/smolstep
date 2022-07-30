@@ -1,6 +1,7 @@
 import { Task } from "../models/task";
 import { Length, Difficulty, DeclineReason} from "../constants";
 import { GetNextTaskArgs } from "../models/get-next-task-args";
+import { AddTaskArgs } from "../models/add-task-args";
 
 class MockTasks {
     private tasks: Task[];
@@ -57,7 +58,7 @@ class MockTasks {
     }
 
     getNextTaskId(args: GetNextTaskArgs): number {
-        let filteredTasks: Task[] = this.tasks.filter(x => x.difficulty <= args.maxDifficulty 
+        let filteredTasks: Task[] = this.tasks.filter(x => x.difficulty <= args.maxDifficulty
             && x.length <= args.maxLength
             && args.declinedTasks.indexOf(x.id) == -1);
 
@@ -67,7 +68,18 @@ class MockTasks {
         } else {
             return -1;
         }
-      }
+    }
+
+    addTask(args: AddTaskArgs) {
+        let newTask: Task = {
+            name: args.name,
+            description: args.description,
+            difficulty: Number(args.difficulty),
+            length: Number(args.length),
+            id: this.tasks.length + 1
+        }
+        this.tasks.push(newTask);
+    }
 }
 
 export let mockTasks = new MockTasks();

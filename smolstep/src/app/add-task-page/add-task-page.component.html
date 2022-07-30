@@ -1,0 +1,33 @@
+<div class="turtle">
+  <mat-card>
+    <div class="add-task-container">
+      <mat-form-field class="task-text-property" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Ex. Mail Wedding Card" id="taskName" [formControl]="taskName"/>
+      </mat-form-field>
+      <mat-form-field class="task-text-property" appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput placeholder="Mail it to 555 Newlywed way by Saturday or else." id="taskDescription" [formControl]="taskDescription" rows="4"></textarea>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Difficulty</mat-label>
+        <mat-select [formControl]="taskDifficulty">
+          <mat-option value="0">Easy</mat-option>
+          <mat-option value="1">Medium</mat-option>
+          <mat-option value="2">Hard</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Length</mat-label>
+        <mat-select [formControl]="taskLength">
+          <mat-option value="0">Seconds</mat-option>
+          <mat-option value="1">Minutes</mat-option>
+          <mat-option value="2">Hours</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </mat-card>
+</div>
+<mat-toolbar class="button-row">
+  <button mat-raised-button color="accent" class="action-button add-task-page-button" (click)="addTask()">Add Task</button>
+</mat-toolbar>

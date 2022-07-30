@@ -1,7 +1,3 @@
-.task-card-container {
-    padding: 15px;
-}
-
 .task-details {
     display: flex;
     justify-content: space-evenly;

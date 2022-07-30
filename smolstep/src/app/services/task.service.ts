@@ -3,6 +3,7 @@ import { Task } from '../models/task';
 import { mockTasks } from './mock-tasks';
 import { DeclineReason, Difficulty, Length } from '../constants'
 import { GetNextTaskArgs } from '../models/get-next-task-args';
+import { AddTaskArgs } from '../models/add-task-args';
 
 @Injectable({
   providedIn: 'root'
@@ -43,5 +44,9 @@ export class TaskService {
     }
 
     return mockTasks.getNextTaskId(args);
+  }
+
+  addTask(args: AddTaskArgs) {
+    mockTasks.addTask(args);
   }
 }
