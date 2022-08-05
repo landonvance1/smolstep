@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "LtJgEPxespnVGcdhvWZ1uy2PDTNUf6VX3HoVDA+W7tE=",
+  "Source": "smolstepAPI",
+  "BasePath": "_content/smolstepAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
